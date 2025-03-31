@@ -1,5 +1,5 @@
 import FadeContent from "./FadeContent";
-import SpotlightCard from "./SpotlightCard";
+import ProjectCard from "./ProjectCard";
 
 export default function Projects() {
   return (
@@ -17,13 +17,7 @@ export default function Projects() {
         className="h-auto w-4/5 border-gray-800 border border-solid rounded-2xl flex gap-10 flex-wrap justify-center items-center p-10"
         style={{ padding: "2rem" }}
       >
-        <SpotlightCard
-          spotlightColor="rgba(0, 229, 255, 0.2)"
-          className="custom-spotlight-card h-80 w-72 text-white flex flex-col m-10"
-        >
-          <h1>Project 1</h1>
-          <p>iuabwbidandninaw sijdawwd</p>
-        </SpotlightCard>
+        <ProjectCard />
       </div>
     </section>
   );

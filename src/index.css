@@ -10,8 +10,9 @@ html,
 body {
   height: 100%;
   width: 100%;
+  scrollbar-width: thin;
 }
 
 :root {
-  background-color: rgb(24, 24, 24);
+  background-color: rgb(6, 6, 6);
 }

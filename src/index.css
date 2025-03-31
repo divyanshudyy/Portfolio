@@ -12,3 +12,6 @@ body {
   width: 100%;
 }
 
+:root {
+  background-color: rgb(24, 24, 24);
+}

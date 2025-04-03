@@ -1,6 +1,6 @@
 import SpotlightCard from "./SpotlightCard";
-
 export default function ProjectCard() {
+  
   return (
     <>
       <SpotlightCard className="custom-spotlight-card h-80 w-72 text-white flex flex-col">

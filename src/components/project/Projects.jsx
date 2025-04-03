@@ -1,22 +1,24 @@
-import FadeContent from "./FadeContent";
+import ScrollFloat from "./ScrollFloat";
 import ProjectCard from "./ProjectCard";
 
 export default function Projects() {
   return (
-    <section className="h-screen w-full flex flex-col justify-center items-center">
-      <FadeContent
-        blur={true}
-        duration={1000}
-        easing="ease-out"
-        initialOpacity={0}
-        className="text-white text-6xl"
+    <section className="h-auto w-full flex flex-col justify-center items-center">
+      <ScrollFloat
+        animationDuration={1}
+        ease="back.inOut(2)"
+        scrollStart="center bottom+=50%"
+        scrollEnd="bottom bottom-=40%"
+        stagger={0.03}
       >
-        Selected Projects
-      </FadeContent>
+        PROJECTS
+      </ScrollFloat>
       <div
-        className="h-auto w-4/5 border-gray-800 border border-solid rounded-2xl flex gap-10 flex-wrap justify-center items-center p-10"
-        style={{ padding: "2rem" }}
+        className="h-auto w-4/5 flex gap-8 flex-wrap justify-center items-center p-10 bg-zinc-900 rounded-2xl"
+        style={{ padding: "1rem" }}
       >
+        <ProjectCard />
+        <ProjectCard />
         <ProjectCard />
       </div>
     </section>

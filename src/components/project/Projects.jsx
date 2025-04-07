@@ -14,7 +14,7 @@ export default function Projects() {
         PROJECTS
       </ScrollFloat>
       <div
-        className="h-auto w-4/5 flex gap-8 flex-wrap justify-center items-center p-10 bg-zinc-900 rounded-2xl"
+        className="h-140 w-4/5 flex gap-8 flex-wrap justify-center items-center p-10 bg-zinc-900 rounded-2xl"
         style={{ padding: "1rem" }}
       >
         <ProjectCard />

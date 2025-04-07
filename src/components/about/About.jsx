@@ -11,7 +11,7 @@ export default function Hero() {
           blurStrength={20}
           containerClassName="max-w-[1200px] mx-auto px-6 text-center opacity-75"
         >
-          " I am a full-stack developer specializing in building impactful,
+          "Full-stack developer specializing in building impactful,
           scalable, and efficient digital solutions. With expertise across
           modern web technologies, I create future-ready applications that blend
           performance, security, and seamless user experience . "

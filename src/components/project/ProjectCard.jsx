@@ -30,14 +30,32 @@ export default function ProjectCard() {
             </div>
           </SpotlightCard>
         </DialogTrigger>
-        <DialogContent className="bg-black h-1/2 w-">
-          <DialogHeader>
-            <DialogTitle>Are you absolutely sure?</DialogTitle>
-            <DialogDescription>
-              This action cannot be undone. This will permanently delete your
-              account and remove your data from our servers.
-            </DialogDescription>
-          </DialogHeader>
+        <DialogContent className="h-2/3 w-screen max-w-none flex flex-row bg-neutral-900 gap-0 rounded-lg overflow-hidden">
+          <div className="w-2/3 h-full flex justify-center items-center bg-neutral-900">
+            <div className="w-full rounded-xl overflow-hidden">
+              <video
+                src="https://www.w3schools.com/html/mov_bbb.mp4"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          <div className="w-1/3 h-full bg-neutral-900 flex flex-col justify-center gap-4 text-white">
+            <h2 className="text-2xl font-semibold">Project Showcase</h2>
+            <p className="text-sm text-muted-foreground">
+              Explore the details of this project, see how it works in action,
+              and take the next step!
+            </p>
+
+            <div className="flex gap-4 mt-4">
+              <button className="bg-primary text-white px-4 py-2 rounded-md hover:bg-primary/90 transition-colors">
+                View Code
+              </button>
+              <button className="border border-white text-white px-4 py-2 rounded-md hover:bg-white hover:text-black transition-colors">
+                Live Demo
+              </button>
+            </div>
+          </div>
         </DialogContent>
       </Dialog>
     </>

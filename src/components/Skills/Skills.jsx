@@ -4,7 +4,7 @@ import ScrollFloat from "../project/ScrollFloat";
 export default function Skills() {
   return (
     <>
-      <section className="min-h-screen w-full flex flex-col justify-center items-center gap-10">
+      <section className="min-h-screen w-full flex flex-col justify-center items-center gap-8">
         <ScrollFloat
           animationDuration={1}
           ease="back.inOut(2)"
@@ -14,7 +14,7 @@ export default function Skills() {
         >
           Skills
         </ScrollFloat>
-        <div className="h-1/2 w-2/3 flex justify-center items-center gap-10 flex-wrap ">
+        <div className="h-1/2 w-5/6 flex justify-center items-center gap-5 flex-wrap">
           <StarBorder
             as="button"
             className="custom-class w-40"

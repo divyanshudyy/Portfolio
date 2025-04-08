@@ -4,6 +4,7 @@ import Projects from "./components/project/Projects";
 import Blog from "./components/Blogs/Blog";
 import Skills from "./components/Skills/Skills";
 import Resume from "./components/Resume/Resume";
+import Contact from "./components/Contact/Contact";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <Projects />
       <Blog />
       <Resume />
+      <Contact/>
     </main>
   );
 }

@@ -1,5 +1,5 @@
-import ScrollFloat from "../project/ScrollFloat";
 import ProjectCard from "../project/ProjectCard";
+import ScrollFloat from "../project/ScrollFloat";
 
 export default function Blog() {
   return (

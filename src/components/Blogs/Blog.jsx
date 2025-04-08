@@ -1,7 +1,7 @@
-import ScrollFloat from "./ScrollFloat";
-import ProjectCard from "./ProjectCard";
+import ScrollFloat from "../project/ScrollFloat";
+import ProjectCard from "../project/ProjectCard";
 
-export default function Projects() {
+export default function Blog() {
   return (
     <section className="h-auto w-full flex flex-col justify-center items-center">
       <ScrollFloat
@@ -11,7 +11,7 @@ export default function Projects() {
         scrollEnd="bottom bottom-=40%"
         stagger={0.03}
       >
-        PROJECTS
+        Blogs & Case Studies
       </ScrollFloat>
       <div
         className="h-auto w-auto flex gap-8 flex-wrap justify-center items-center p-10 bg-zinc-900 rounded-2xl"

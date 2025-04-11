@@ -7,7 +7,7 @@ export default function Hero() {
         <ScrollReveal
           baseOpacity={0}
           enableBlur={true}
-          baseRotation={10}
+          baseRotation={-10}
           blurStrength={20}
           containerClassName="max-w-[1200px] mx-auto px-1 text-center opacity-75"
         >

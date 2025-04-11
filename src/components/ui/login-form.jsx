@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import BlurText from "../Hero/BlurText";
 
 export function LoginForm({ className, ...props }) {
   return (
@@ -21,7 +22,13 @@ export function LoginForm({ className, ...props }) {
               </div>
               <span className="sr-only">Acme Inc.</span> 
             </a>*/}
-            <h1 className="text-xl font-bold text-white">Contact Me</h1>
+            <BlurText
+              text="Contact Me"
+              delay={150}
+              animateBy="words"
+              direction="top"
+              className="text-4xl mb-8 text-white font-bold"
+            />
             <div className="text-center text-sm text-white">
               {/* Don&apos;t have an account?{" "}
               <a href="#" className="underline underline-offset-4">
@@ -67,7 +74,9 @@ export function LoginForm({ className, ...props }) {
                   fill="currentColor"
                 />
               </svg> */}
-              Github
+              <a href="https://github.com/divyanshudyy?tab=overview&from=2025-04-01&to=2025-04-10">
+                Github
+              </a>
             </Button>
             <Button variant="outline" type="button" className="w-full">
               {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -76,7 +85,9 @@ export function LoginForm({ className, ...props }) {
                   fill="currentColor"
                 />
               </svg> */}
-              LinkedIn
+              <a href="https://www.linkedin.com/in/divyanshu-divy-8170461ba/">
+                LinkedIn
+              </a>
             </Button>
           </div>
         </div>

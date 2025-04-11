@@ -1,19 +1,17 @@
 import StarBorder from "./StarBorder";
-import ScrollFloat from "../project/ScrollFloat";
+import BlurText from "../Hero/BlurText";
 
 export default function Skills() {
   return (
     <>
       <section className="min-h-screen w-full flex flex-col justify-center items-center gap-8">
-        <ScrollFloat
-          animationDuration={1}
-          ease="back.inOut(2)"
-          scrollStart="center bottom+=50%"
-          scrollEnd="bottom bottom-=40%"
-          stagger={0.03}
-        >
-          Skills
-        </ScrollFloat>
+        <BlurText
+          text="Skills"
+          delay={150}
+          animateBy="words"
+          direction="top"
+          className="text-4xl mb-8 text-white font-bold"
+        />
         <div className="h-1/2 w-5/6 flex justify-center items-center gap-5 flex-wrap">
           <StarBorder
             as="button"

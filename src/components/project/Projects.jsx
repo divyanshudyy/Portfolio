@@ -2,14 +2,16 @@ import { useState } from "react";
 import ProjectCard from "./ProjectCard";
 import BlurText from "../Hero/BlurText";
 import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { ChevronRight } from "lucide-react";
 
 const images = [
   "https://images.unsplash.com/photo-1738641928021-15dedad586da?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://source.unsplash.com/random/300x200?2",
-  "https://source.unsplash.com/random/300x200?3",
-  "https://source.unsplash.com/random/300x200?4",
-  "https://source.unsplash.com/random/300x200?5",
-  "https://source.unsplash.com/random/300x200?6",
+  "https://images.unsplash.com/photo-1738641928021-15dedad586da?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1738641928021-15dedad586da?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1738641928021-15dedad586da?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1738641928021-15dedad586da?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1738641928021-15dedad586da?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 ];
 
 export default function Projects() {
@@ -21,7 +23,7 @@ export default function Projects() {
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
-      viewport={{ once: false, amount: 0.7 }}
+      viewport={{ once: false, amount: 0.3 }}
       className="h-auto w-full flex flex-col justify-center items-center py-10"
     >
       <BlurText
@@ -32,30 +34,47 @@ export default function Projects() {
         className="text-4xl mb-8 text-white font-bold"
       />
 
-      <div className="h-auto w-[65rem] flex flex-col items-center p-6 bg-zinc-900 rounded-2xl">
-        <div className="w-full flex gap-8 flex-wrap justify-center items-center">
-          <AnimatePresence>
-            {visibleImages.map((url, idx) => (
+      <motion.div
+        layout
+        transition={{
+          layout: { duration: 0.3, ease: "easeInOut" },
+        }}
+        className="w-[65rem] flex flex-col items-center bg-zinc-900 rounded-2xl p-6"
+      >
+        <motion.div
+          layout
+          className="w-full flex flex-wrap gap-8 justify-center items-center"
+        >
+          <AnimatePresence initial={false}>
+            {(showAll ? images : images.slice(0, 3)).map((url, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 30 }}
+                layout
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 30 }}
-                transition={{ duration: 0.4 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.3 }}
               >
                 <ProjectCard imageUrl={url} />
               </motion.div>
             ))}
           </AnimatePresence>
-        </div>
+        </motion.div>
 
-        <button
+        <Button
+          variant="outline"
+          size="icon"
           onClick={() => setShowAll(!showAll)}
-          className="text-sm mt-6 px-4 py-2 text-white border border-white rounded-lg hover:bg-white hover:text-black transition"
+          className="mt-6 bg-zinc-900 text-white border-1 border-zinc-800"
         >
-          {showAll ? "View Less" : "View More"}
-        </button>
-      </div>
+          <motion.div
+            animate={{ rotate: showAll ? -90 : 90 }}
+            transition={{ duration: 0.3 }}
+          >
+            <ChevronRight className="h-5 w-5" />
+          </motion.div>
+        </Button>
+      </motion.div>
     </motion.section>
   );
 }

@@ -16,7 +16,7 @@ export default function ProjectCard({ imageUrl }) {
         <DialogTrigger>
           <SpotlightCard className="custom-spotlight-card h-80 w-72 text-white flex flex-col">
             <img
-              src={imageUrl}
+              src={imageUrl }
               alt="Project Image"
               className="w-full h-45 object-cover"
             />
@@ -35,6 +35,8 @@ export default function ProjectCard({ imageUrl }) {
               <video
                 src="https://www.w3schools.com/html/mov_bbb.mp4"
                 className="w-full h-full object-cover"
+                muted
+                autoPlay
               />
             </div>
           </div>

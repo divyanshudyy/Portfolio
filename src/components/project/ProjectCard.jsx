@@ -9,15 +9,14 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
-export default function ProjectCard() {
+export default function ProjectCard({ imageUrl }) {
   return (
     <>
       <Dialog>
         <DialogTrigger>
-          {" "}
           <SpotlightCard className="custom-spotlight-card h-80 w-72 text-white flex flex-col">
             <img
-              src="https://images.unsplash.com/photo-1738641928021-15dedad586da?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src={imageUrl}
               alt="Project Image"
               className="w-full h-45 object-cover"
             />

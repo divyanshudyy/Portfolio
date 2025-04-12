@@ -27,7 +27,7 @@ export default function Projects() {
       className="h-auto w-full flex flex-col justify-center items-center py-10"
     >
       <BlurText
-        text="Selected Projects"
+        text="Blogs & Case Studies"
         delay={150}
         animateBy="words"
         direction="top"

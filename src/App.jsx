@@ -1,3 +1,4 @@
+import PageTransition from "./components/Hero/PageTransition";
 import Hero from "./components/Hero/Hero";
 import About from "./components/about/About";
 import Projects from "./components/project/Projects";
@@ -8,14 +9,17 @@ import Contact from "./components/Contact/Contact";
 
 export default function App() {
   return (
-    <main className="h-auto w-9/10 mx-auto bg-zinc-950 ">
+    <main className="h-auto w-full bg-zinc-950 relative">
+      {/* Page transition animation */}
+      <PageTransition />
+
       <Hero />
       <About />
       <Skills />
       <Projects />
       <Blog />
       <Resume />
-      <Contact/>
+      <Contact />
     </main>
   );
 }

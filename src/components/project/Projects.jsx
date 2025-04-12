@@ -23,6 +23,21 @@ const videos = [
   "https://www.w3schools.com/html/mov_bbb.mp4",
 ];
 
+const title = ["SamsungEvolve", "Title B", "Title C"];
+const description = [
+  "A modern redesign of the Samsung website, delivering a sleek and interactive user experience.A modern redesign of the Samsung website, delivering a sleek and interactive user experience.",
+  "A modern redesign of the Samsung website, delivering a sleek and interactive user experience.",
+  "A modern redesign of the Samsung website, delivering a sleek and interactive user experience.",
+  "A modern redesign of the Samsung website, delivering a sleek and interactive user experience.",
+  "Descp B",
+  "Descp C",
+];
+const github = ["https://github.com/divyanshudyy/Reimagine_Hackathon_II"];
+
+const demo = [
+  "https://samsung-evolve-8jbkkifee-divyanshu-divys-projects.vercel.app",
+];
+
 export default function Projects() {
   const [showAll, setShowAll] = useState(false);
   const visibleImages = showAll ? images : images.slice(0, 3);
@@ -64,7 +79,14 @@ export default function Projects() {
                 exit={{ opacity: 0, y: 20 }}
                 transition={{ duration: 0.3 }}
               >
-                <ProjectCard imageUrl={url} videoUrl={videos[idx]} />
+                <ProjectCard
+                  imageUrl={url}
+                  videoUrl={videos[idx]}
+                  title={title[idx]}
+                  description={description[idx]}
+                  githubUrl={github[idx]}
+                  DemoUrl={demo[idx]}
+                />
               </motion.div>
             ))}
           </AnimatePresence>

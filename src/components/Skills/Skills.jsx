@@ -12,7 +12,7 @@ export default function Skills() {
           direction="top"
           className="text-4xl mb-8 text-white font-bold"
         />
-        <div className="h-1/2 w-5/6 flex justify-center items-center gap-5 flex-wrap">
+        <div className="h-1/2 w-4/5 flex justify-center items-center gap-5 flex-wrap">
           <StarBorder
             as="button"
             className="custom-class w-40"

@@ -2,6 +2,8 @@ import { useState } from "react";
 import ProjectCard from "../project/ProjectCard";
 import BlurText from "../Hero/BlurText";
 import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { ChevronRight } from "lucide-react";
 
 const images = [
   "https://images.unsplash.com/photo-1657638323016-b9b802f1756b?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -25,7 +27,7 @@ export default function Projects() {
       className="h-auto w-full flex flex-col justify-center items-center py-10"
     >
       <BlurText
-        text="Blogs & Case Studies"
+        text="Selected Projects"
         delay={150}
         animateBy="words"
         direction="top"
@@ -59,13 +61,19 @@ export default function Projects() {
           </AnimatePresence>
         </motion.div>
 
-        <motion.button
-          layout
+        <Button
+          variant="outline"
+          size="icon"
           onClick={() => setShowAll(!showAll)}
-          className="text-sm mt-6 px-4 py-2 text-white border border-white rounded-lg hover:bg-white hover:text-black transition"
+          className="mt-6 bg-zinc-900 text-white border-1 border-zinc-800"
         >
-          {showAll ? "View Less" : "View More"}
-        </motion.button>
+          <motion.div
+            animate={{ rotate: showAll ? -90 : 90 }}
+            transition={{ duration: 0.3 }}
+          >
+            <ChevronRight className="h-5 w-5" />
+          </motion.div>
+        </Button>
       </motion.div>
     </motion.section>
   );

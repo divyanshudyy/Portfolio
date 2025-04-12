@@ -14,6 +14,15 @@ const images = [
   "https://images.unsplash.com/photo-1738641928021-15dedad586da?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 ];
 
+const videos = [
+  "https://www.w3schools.com/html/mov_bbb.mp4",
+  "https://www.w3schools.com/html/mov_bbb.mp4",
+  "https://www.w3schools.com/html/mov_bbb.mp4",
+  "https://www.w3schools.com/html/mov_bbb.mp4",
+  "https://www.w3schools.com/html/mov_bbb.mp4",
+  "https://www.w3schools.com/html/mov_bbb.mp4",
+];
+
 export default function Projects() {
   const [showAll, setShowAll] = useState(false);
   const visibleImages = showAll ? images : images.slice(0, 3);
@@ -55,7 +64,7 @@ export default function Projects() {
                 exit={{ opacity: 0, y: 20 }}
                 transition={{ duration: 0.3 }}
               >
-                <ProjectCard imageUrl={url} />
+                <ProjectCard imageUrl={url} videoUrl={videos[idx]} />
               </motion.div>
             ))}
           </AnimatePresence>

@@ -11,8 +11,10 @@ html,
 body {
   height: 100%;
   width: 100%;
-  scrollbar-width: thin;
-  background-color: rgb(13, 13, 13);
+  scrollbar-width: none;
+  overflow-x: hidden;
+
+
 }
 
 :root {

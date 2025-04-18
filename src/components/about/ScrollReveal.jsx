@@ -23,7 +23,7 @@ const ScrollReveal = ({
     return text.split(/(\s+)/).map((word, index) => {
       if (word.match(/^\s+$/)) return word;
       return (
-        <span className="inline-block text-white word" key={index}>
+        <span className="inline-block text-white word text-5xl" key={index}>
           {word}
         </span>
       );

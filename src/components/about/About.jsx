@@ -9,7 +9,7 @@ export default function Hero() {
           enableBlur={true}
           baseRotation={-10}
           blurStrength={20}
-          containerClassName="max-w-[1200px] mx-auto px-1 text-center opacity-75"
+          containerClassName="max-w-[1200px] mx-auto px-1 opacity-75"
         >
           "Full-stack developer specializing in building impactful, scalable,
           and efficient digital solutions. With expertise across modern web

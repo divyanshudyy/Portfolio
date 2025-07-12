@@ -6,12 +6,16 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import BlurText from "../Hero/BlurText";
 
-// ✅ Import shadcn form components
+import emailjs from "@emailjs/browser";
+
+const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
 import {
   Form,
   FormField,
@@ -39,20 +43,22 @@ export function LoginForm({ className, ...props }) {
   });
 
   function onSubmit(values) {
-    console.log(values);
     form.reset();
     const { email, comment } = values;
 
     const templateParams = {
-      email: email,
+      from_email: email,
       message: comment,
     };
     emailjs
       .send(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
-        templateParams,
-        "YOUR_PUBLIC_KEY"
+        serviceID,
+        templateID,
+        {
+          from_email: values.email,
+          message: values.comment,
+        },
+        publicKey
       )
       .then(
         (response) => {

@@ -10,9 +10,7 @@ import Contact from "./components/Contact/Contact";
 export default function App() {
   return (
     <main className="h-auto w-full bg-zinc-950 relative">
-      {/* Page transition animation */}
       <PageTransition />
-
       <Hero />
       <About />
       <Skills />

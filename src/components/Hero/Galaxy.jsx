@@ -171,21 +171,21 @@ void main() {
 
 export default function Galaxy({
   focal = [0.5, 0.5],
-  rotation = [1.0, 0.0],
+  rotation = [.2, 0],
   starSpeed = 0.5,
-  density = 1,
-  hueShift = 140,
+  density = 3,
+  hueShift = 200,
   disableAnimation = false,
-  speed = 1.0,
+  speed = 0.1,
   mouseInteraction = true,
-  glowIntensity = 0.3,
-  saturation = 0.0,
+  glowIntensity = 0.05,
+  saturation = 5,
   mouseRepulsion = true,
-  repulsionStrength = 2,
-  twinkleIntensity = 0.3,
-  rotationSpeed = 0.1,
+  repulsionStrength = 12,
+  twinkleIntensity = 0.01,
+  rotationSpeed = 0.01,
   autoCenterRepulsion = 0,
-  transparent = true,
+  transparent = false,
   ...rest
 }) {
   const ctnDom = useRef(null);

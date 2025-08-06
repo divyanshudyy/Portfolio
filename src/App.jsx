@@ -6,10 +6,23 @@ import Blog from "./components/Blogs/Blog";
 import Skills from "./components/Skills/Skills";
 import Resume from "./components/Resume/Resume";
 import Contact from "./components/Contact/Contact";
+import Galaxy from "./components/Hero/Galaxy";
+import Navbar from "./components/Navbar/Navbar";
 
 export default function App() {
   return (
-    <main className="h-auto w-full bg-zinc-950 relative">
+    <main className="h-auto w-full relative">
+      <div className="fixed inset-0 -z-10">
+        <Galaxy
+        // mouseRepulsion={false}
+        // mouseInteraction={false}
+        // density={0.1}
+        // glowIntensity={0.1}
+        // saturation={0.5}
+        // hueShift={100}
+        />
+      </div>
+      <Navbar />
       <PageTransition />
       <Hero />
       <About />

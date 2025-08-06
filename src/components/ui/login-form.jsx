@@ -126,19 +126,23 @@ export function LoginForm({ className, ...props }) {
                 />
               </div>
 
-              <Button type="submit" className="w-full">
+              <Button type="submit" variant="outline" className="w-full bg-white">
                 Send
               </Button>
             </div>
 
-            <div className="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
+            <div className="relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t after:border-zinc-600">
               <span className="relative z-10 px-2 text-white bg-zinc-950">
                 Or
               </span>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
-              <Button variant="outline" type="button" className="w-full">
+              <Button
+                variant="outline"
+                type="button"
+                className="w-full bg-white "
+              >
                 <a
                   href="https://github.com/divyanshudyy?tab=overview&from=2025-04-01&to=2025-04-10"
                   target="_blank"
@@ -147,7 +151,11 @@ export function LoginForm({ className, ...props }) {
                   Github
                 </a>
               </Button>
-              <Button variant="outline" type="button" className="w-full">
+              <Button
+                variant="outline"
+                type="button"
+                className="w-full bg-white"
+              >
                 <a
                   href="https://www.linkedin.com/in/divyanshu-divy-8170461ba/"
                   target="_blank"

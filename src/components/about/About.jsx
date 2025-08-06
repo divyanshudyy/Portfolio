@@ -4,6 +4,7 @@ export default function Hero() {
   return (
     <>
       <section className="h-screen w-full flex justify-center items-center">
+        
         <ScrollReveal
           baseOpacity={0}
           enableBlur={true}

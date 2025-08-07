@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import BlurText from "../Hero/BlurText";
+
 
 import emailjs from "@emailjs/browser";
 
@@ -71,15 +71,7 @@ export function LoginForm({ className, ...props }) {
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <div className="flex flex-col gap-6">
-            <div className="flex flex-col items-center gap-2">
-              <BlurText
-                text="Contact Me"
-                delay={150}
-                animateBy="words"
-                direction="top"
-                className="text-4xl mb-8 text-white font-bold"
-              />
-            </div>
+            
 
             <div className="flex flex-col gap-6">
               <div className="grid gap-3">
@@ -141,7 +133,7 @@ export function LoginForm({ className, ...props }) {
             </div>
 
             <div className="relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t after:border-zinc-600">
-              <span className="relative z-10 px-2 text-white bg-zinc-950">
+              <span className="relative z-10 px-2 text-white bg-zinc-900 border-0 rounded-4xl ">
                 Or
               </span>
             </div>

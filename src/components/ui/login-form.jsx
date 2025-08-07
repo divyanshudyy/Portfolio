@@ -3,6 +3,7 @@
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { toast } from "sonner";
 
 import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
@@ -43,30 +44,24 @@ export function LoginForm({ className, ...props }) {
   });
 
   function onSubmit(values) {
-    form.reset();
     const { email, comment } = values;
 
-    const templateParams = {
-      from_email: email,
-      message: comment,
-    };
     emailjs
       .send(
         serviceID,
         templateID,
-        {
-          from_email: values.email,
-          message: values.comment,
-        },
+        { from_email: email, message: comment },
         publicKey
       )
       .then(
         (response) => {
           console.log("SUCCESS!", response.status, response.text);
-          form.reset(); // Clear form after success
+          toast.success("Thanks for reaching out! I'll get back to you soon.");
+          form.reset();
         },
         (error) => {
           console.error("FAILED...", error);
+          toast.error("Failed to send message. Please try again.");
         }
       );
   }
@@ -91,18 +86,23 @@ export function LoginForm({ className, ...props }) {
                 <FormField
                   control={form.control}
                   name="email"
-                  render={({ field }) => (
+                  render={({ field, fieldState }) => (
                     <FormItem>
                       <FormLabel className="text-white">Email</FormLabel>
                       <FormControl>
                         <Input
                           type="email"
                           placeholder="m@example.com"
-                          className="text-white"
+                          className={cn(
+                            "text-white focus:outline-none focus:ring-1 backdrop-blur-md  bg-black/40 ",
+                            fieldState.error
+                              ? "border-red-500 "
+                              : "border-border "
+                          )}
                           {...field}
                         />
                       </FormControl>
-                      <FormMessage />
+                      <FormMessage className="text-red-500 text-sm mt-1" />
                     </FormItem>
                   )}
                 />
@@ -110,23 +110,32 @@ export function LoginForm({ className, ...props }) {
                 <FormField
                   control={form.control}
                   name="comment"
-                  render={({ field }) => (
+                  render={({ field, fieldState }) => (
                     <FormItem>
                       <FormLabel className="text-white">Comment</FormLabel>
                       <FormControl>
                         <Textarea
                           placeholder="Type your query here."
-                          className="text-white"
+                          className={cn(
+                            "text-white focus:outline-none focus:ring-1 backdrop-blur-md  bg-black/40",
+                            fieldState.error
+                              ? "border-red-500"
+                              : "border-border"
+                          )}
                           {...field}
                         />
                       </FormControl>
-                      <FormMessage />
+                      <FormMessage className="text-red-500 text-sm mt-1" />
                     </FormItem>
                   )}
                 />
               </div>
 
-              <Button type="submit" variant="outline" className="w-full bg-white">
+              <Button
+                type="submit"
+                variant="outline"
+                className="w-full bg-white"
+              >
                 Send
               </Button>
             </div>

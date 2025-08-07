@@ -1,7 +1,7 @@
 import { LoginForm } from "@/components/ui/login-form";
 export default function Contact() {
   return (
-    <div className="flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10">
+    <div id="contact" className="flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10">
       <div className="w-full max-w-sm">
         <LoginForm />
       </div>

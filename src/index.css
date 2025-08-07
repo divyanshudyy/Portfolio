@@ -11,9 +11,9 @@ body {
   width: 100%;
   scrollbar-width: none;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
- 
 /* :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);

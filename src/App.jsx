@@ -9,20 +9,22 @@ import Contact from "./components/Contact/Contact";
 import Galaxy from "./components/Hero/Galaxy";
 import Navbar from "./components/Navbar/Navbar";
 import { Toaster } from "@/components/ui/Toast";
+import Silk from "./components/Hero/Silk";
 
 export default function App() {
   return (
     <main className="h-auto w-full relative">
       <Toaster />
-      <div className="fixed inset-0 -z-10">
-        <Galaxy
-        // mouseRepulsion={false}
-        // mouseInteraction={false}
-        // density={0.1}
-        // glowIntensity={0.1}
-        // saturation={0.5}
-        // hueShift={100}
+      <div className="fixed inset-0 -z-10 backdrop-blur-4xl">
+        {/* <Galaxy /> */}
+        <Silk
+          speed={3}
+          scale={1}
+          color="#160D3B"
+          noiseIntensity={0}
+          rotation={0}
         />
+        <div className="absolute inset-0 backdrop-blur-sm bg-transparent"></div>
       </div>
       <Navbar />
       <PageTransition />

@@ -9,7 +9,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed z-100 bottom-5 left-1/2  transform -translate-x-2/4 w-[30%] backdrop-blur-md bg-white/10 border border-zinc-700 rounded-4xl py-4 flex justify-center items-center space-x-14 text-white transition-all duration-1000 ease-out ${
+      className={`fixed z-100 bottom-5 left-1/2  transform -translate-x-2/4 w-[35%] backdrop-blur-md  bg-white/10 border border-zinc-700 rounded-4xl py-4 flex justify-center items-center space-x-14 text-white font-light transition-all duration-1000 ease-out ${
         isVisible ? "translate-y-0 opacity-100" : "translate-y-40 opacity-100"
       }`}
     >
@@ -21,6 +21,9 @@ export default function Navbar() {
       </a>
       <a href="#projects" className="hover:text-blue-400 transition">
         Projects
+      </a>
+      <a href="#resume" className="hover:text-blue-400 transition">
+        Resume
       </a>
       <a href="#contact" className="hover:text-blue-400 transition">
         Contact

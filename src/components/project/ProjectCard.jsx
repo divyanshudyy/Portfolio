@@ -36,7 +36,7 @@ export default function ProjectCard({
   return (
     <Dialog>
       <DialogTrigger>
-        <SpotlightCard className="h-80 w-72 text-white flex flex-col">
+        <SpotlightCard className="h-80 w-72 text-white flex flex-col backdrop-blur-md  bg-zinc-950/65 border border-zinc-700">
           <img
             src={imageUrl}
             alt="Project"
@@ -58,7 +58,7 @@ export default function ProjectCard({
             transition={{ duration: 0.4, ease: "easeInOut" }}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className="w-[90%] rounded-lg overflow-hidden shadow-lg"
+            className="w-[90%] rounded-lg overflow-hidden shadow-lg "
           >
             <video
               ref={videoRef}

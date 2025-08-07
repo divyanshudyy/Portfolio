@@ -44,11 +44,12 @@ export default function Projects() {
 
   return (
     <motion.section
+      id="projects"
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
       viewport={{ once: false, amount: 0.3 }}
-      className="h-auto w-full flex flex-col justify-center items-center py-10"
+      className="h-auto w-full flex flex-col justify-center items-center py-10 "
     >
       <BlurText
         text="Selected Projects"
@@ -63,11 +64,11 @@ export default function Projects() {
         transition={{
           layout: { duration: 0.3, ease: "easeInOut" },
         }}
-        className="w-[65rem] flex flex-col items-center bg-zinc-900 rounded-2xl p-6"
+        className="w-[65rem] flex flex-col items-center p-6 backdrop-blur-md  bg-white/12 border border-zinc-700 rounded-4xl "
       >
         <motion.div
           layout
-          className="w-full flex flex-wrap gap-8 justify-center items-center"
+          className="w-full flex flex-wrap gap-8 justify-center items-center "
         >
           <AnimatePresence initial={false}>
             {(showAll ? images : images.slice(0, 3)).map((url, idx) => (
@@ -86,6 +87,7 @@ export default function Projects() {
                   description={description[idx]}
                   githubUrl={github[idx]}
                   DemoUrl={demo[idx]}
+                  className=""
                 />
               </motion.div>
             ))}
@@ -95,8 +97,8 @@ export default function Projects() {
         <Button
           variant="outline"
           size="icon"
-          onClick={() => setShowAll(!showAll)}
-          className="mt-6 bg-zinc-900 text-white border-1 border-zinc-800"
+          className="mt-6 text-white  w-20 backdrop-blur-md  bg-white/0 border border-zinc-700"
+          onMouseOver={() => setShowAll(!showAll)}
         >
           <motion.div
             animate={{ rotate: showAll ? -90 : 90 }}

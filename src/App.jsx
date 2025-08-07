@@ -8,10 +8,12 @@ import Resume from "./components/Resume/Resume";
 import Contact from "./components/Contact/Contact";
 import Galaxy from "./components/Hero/Galaxy";
 import Navbar from "./components/Navbar/Navbar";
+import { Toaster } from "@/components/ui/Toast";
 
 export default function App() {
   return (
     <main className="h-auto w-full relative">
+      <Toaster />
       <div className="fixed inset-0 -z-10">
         <Galaxy
         // mouseRepulsion={false}

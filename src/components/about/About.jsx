@@ -1,32 +1,54 @@
+import BlurText from "../Hero/BlurText";
 import ScrollReveal from "./ScrollReveal";
+import { motion, useInView, useAnimation } from "framer-motion";
+import { useRef, useEffect } from "react";
+import { about } from "@/lib/data";
 
 export default function Hero() {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.8, ease: "easeOut" },
+      });
+    }
+  }, [inView, controls]);
+
   return (
-    <>
-      <section
-        id="about"
-        className="h-screen w-full flex justify-center items-center"
+    <motion.section
+      id="about"
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      viewport={{ once: false, amount: 0.3 }}
+      className="h-screen w-full flex flex-col items-center justify-center"
+    >
+      <BlurText
+        text={about.title}
+        delay={150}
+        animateBy="words"
+        direction="top"
+        className="text-4xl mb-8 text-white font-bold"
+      />
+
+      <ScrollReveal
+        baseOpacity={0}
+        enableBlur={true}
+        baseRotation={-0.11}
+        blurStrength={10}
+        containerClassName="w-[80%] italic text-center mt-0 opacity-60 text-white"
       >
-        <ScrollReveal
-          baseOpacity={0.1}
-          enableBlur={true}
-          baseRotation={-0.11}
-          blurStrength={10}
-          containerClassName="max-w-[1200px] mx-auto px-1 opacity-90 "
-          
-        >
-          I’m a full-stack JavaScript developer with expertise in building
-          end-to-end web architectures using React.js, Node.js, Express, and
-          MongoDB. I specialize in designing RESTful APIs, implementing secure
-          authentication systems with JWT, and deploying containerized
-          microservices using Docker and Kubernetes. With experience in
-          {/* real-time systems, database optimization, and cloud infrastructure, I
-          focus on creating clean, scalable, and performance-driven solutions.
-          As a national-level hackathon finalist (Top 25), I thrive in
-          challenging environments and am passionate about engineering
-          impactful, production-ready applications. */}
-        </ScrollReveal>
-      </section>
-    </>
+        {about.description}
+      </ScrollReveal>
+
+      <p className="text-xs italic text-center mt-4 opacity-60 text-white">
+        {about.subtitle}
+      </p>
+    </motion.section>
   );
 }

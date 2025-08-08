@@ -14,7 +14,7 @@ const ScrollReveal = ({
   containerClassName = "",
   textClassName = "",
   rotationEnd = "bottom bottom",
-  wordAnimationEnd = "bottom bottom",
+  wordAnimationEnd = "bottom 95%",
 }) => {
   const containerRef = useRef(null);
 
@@ -64,7 +64,7 @@ const ScrollReveal = ({
         {
           ease: "none",
           opacity: 1,
-          stagger: 0.05,
+          stagger: 0.08,
           scrollTrigger: {
             trigger: el,
             scroller,
@@ -109,7 +109,7 @@ const ScrollReveal = ({
   return (
     <h2 ref={containerRef} className={`my-5 ${containerClassName} `}>
       <p
-        className={` text-2xl text-[clamp(1.2rem,4vw,3rem)] leading-[1.5] font-semibold ${textClassName}`}
+        className={` text-[clamp(1rem,4vw,2.5rem)] leading-[1.5] font-light ${textClassName}`}
       >
         {splitText}
       </p>

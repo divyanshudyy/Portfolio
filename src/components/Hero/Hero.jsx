@@ -1,3 +1,4 @@
+import { hero } from "@/lib/data";
 import BlurText from "./BlurText";
 import ShinyText from "./ShinyText";
 
@@ -7,7 +8,7 @@ export default function Hero() {
       <section className="h-screen w-full flex flex-col justify-center items-center font-extralight relative">
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 text-center flex flex-col items-center">
           <BlurText
-            text="Where Logic Meets Vision and Code Builds the Future"
+            text={hero.title}
             delay={100}
             animateBy="words"
             direction="top"
@@ -15,7 +16,7 @@ export default function Hero() {
           />
           <br />
           <ShinyText
-            text=" Full-Stack Developer | Auth • Real-Time • Cloud | MERN Stack "
+            text={hero.subtitle}
             disabled={false}
             speed={3}
             className="text-2xl text-white"

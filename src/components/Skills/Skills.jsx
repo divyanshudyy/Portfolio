@@ -1,5 +1,4 @@
 import MagicBento from "./MagicBento";
-import StarBorder from "./StarBorder";
 import BlurText from "../Hero/BlurText";
 
 export default function Skills() {

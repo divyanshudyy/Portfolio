@@ -10,6 +10,34 @@ export const about = {
     "Obsessed with clean code, dark mode, and climbing mountains — literally.",
 };
 
+export const nav = [
+  {
+    id: "home",
+    icon: "Home",
+    label: "Home",
+  },
+  {
+    id: "about",
+    icon: "About",
+    label: "About",
+  },
+  {
+    id: "projects",
+    icon: "Projects",
+    label: "Projects",
+  },
+  {
+    id: "resume",
+    icon: "Resume",
+    label: "Resume",
+  },
+  {
+    id: "contact",
+    icon: "Contact",
+    label: "Contact",
+  },
+];
+
 export const projects = Object.freeze([
   {
     title: "Samsung Evolve",

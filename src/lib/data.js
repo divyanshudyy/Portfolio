@@ -14,27 +14,27 @@ export const nav = [
   {
     id: "home",
     icon: "Home",
-    label: "Home",
+    label: "Back To Top",
   },
   {
     id: "about",
     icon: "About",
-    label: "About",
+    label: "Who I Am",
   },
   {
     id: "projects",
     icon: "Projects",
-    label: "Projects",
+    label: "Featured Work",
   },
   {
     id: "resume",
     icon: "Resume",
-    label: "Resume",
+    label: "Experience",
   },
   {
     id: "contact",
     icon: "Contact",
-    label: "Contact",
+    label: "Say Hello",
   },
 ];
 

@@ -3,7 +3,10 @@ import BlurText from "../Hero/BlurText";
 
 export default function Resume() {
   return (
-    <section id="resume" className="h-screen w-full flex flex-col justify-center items-center gap-5">
+    <section
+      id="resume"
+      className="h-screen w-full flex flex-col justify-center items-center gap-5"
+    >
       <BlurText
         text="Experience & Credentials"
         delay={150}

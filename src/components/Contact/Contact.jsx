@@ -2,7 +2,7 @@ import BlurText from "../Hero/BlurText";
 import { LoginForm } from "@/components/ui/login-form";
 export default function Contact() {
   return (
-    <div
+    <section
       id="contact"
       className="flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10"
     >
@@ -18,6 +18,6 @@ export default function Contact() {
       <div className="w-full max-w-sm">
         <LoginForm />
       </div>
-    </div>
+    </section>
   );
 }
